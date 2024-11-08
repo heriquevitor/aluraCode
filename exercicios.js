@@ -107,3 +107,91 @@ console.log(brincaString.toLocaleUpperCase());
 console.log(brincaString.toLocaleLowerCase());
 console.log(brincaString.slice(6,14));
 console.log(brincaString.substring(1,5));
+
+//Bora praticar?
+
+//Crie variáveis que armazenem o valor do saldo, de depósito e de um saque de uma conta bancária, depois realize operações de adição e subtração entre eles utilizando uma variável chamada operacao, considerando a função de cada variável criada anteriormente. Exiba os resultados finais no console.
+
+let saldoBanco = 39000000;
+let depositoBanco = 1000000;
+let saque = 2900000; // Valor do saque como número, sem formatação
+
+// Calcula o saldo após o saque e o depósito
+let saldoBancoFinalSaque = saldoBanco - saque;
+let saldoBancoFinalDeposito = saldoBancoFinalSaque + depositoBanco;
+
+// Formata os valores para exibir na mensagem final
+let saldoBancoFormatado = saldoBanco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+let saqueFormatado = saque.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+let depositoBancoFormatado = depositoBanco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+let saldoBancoFinalSaqueFormatado = saldoBancoFinalSaque.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+let saldoBancoFinalDepositoFormatado = saldoBancoFinalDeposito.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+console.log(`Hoje meu saldo quando acordei era ${saldoBancoFormatado}. Fui pagar as contas e efetuei um saque de ${saqueFormatado}, ficando com o saldo de ${saldoBancoFinalSaqueFormatado}. Fiz então o depósito de ${depositoBancoFormatado}, ficando com saldo final de ${saldoBancoFinalDepositoFormatado}`);
+
+
+
+//Crie uma variável numérica com um valor. Utilize um operador ternário para verificar se esse valor é par ou ímpar. Exiba o resultado no console.
+let numeroUm = 56
+let operadorTemplario = numeroUm % 2 === 0 ? `O numero é par`: `O número é impar`
+console.log(operadorTemplario);
+//Considere uma situação em que você está verificando se um usuário está logado e tem permissão de administrador para acessar determinada funcionalidade. Utilize variáveis booleanas para simular essas condições e use o operador AND para verificar se ambas são verdadeiras.
+
+const usuarioAdministrador= `Herique`;
+let usuarioLogado = `Herique`;
+if(usuarioAdministrador === `Herique`){
+  console.log(`Bem vindo senhor Administrador`);
+  
+} else{
+  console.log(`Bem vindo usuario padrao`);
+}
+
+const digitoFuncionalidade = 1;
+if(usuarioLogado === usuarioAdministrador && digitoFuncionalidade === 1){
+  console.log(`Geladeira aberta`);
+}else{
+  console.log(`Você não tem permissão`);
+}
+
+//Declare duas variáveis booleanas e use o operador OR para verificar se pelo menos uma delas é verdadeira. Exiba o resultado no console.
+const variavel1 = 1;
+const variavel2 = false;
+let variavel3;
+
+if(variavel1 == true){
+  console.log(`Essa é verdadeira`);
+} else{
+ console.log(`Essa é falsa`);
+}
+if(variavel2 == 0){
+  console.log(`Essa é falsa pelo Falsy`);
+} else{
+ console.log(`Essa é Verdadeira da Shoopee`);
+}
+if(variavel3 == null){
+  console.log(`Essa é falsa pelo falsy`);
+} else{
+ console.log(`Essa é Verdadeira da Shopee2`);
+}
+
+if(variavel1 == 1 || variavel3 == null){
+  console.log(`Ambas são verdadeiras, lembrando que funcionaria mesmo se uma apenas fosse verdade`);
+}
+
+
+//Imagine um sistema que determina se um usuário tem idade suficiente para comprar o ingresso para um show. Declare duas variáveis que determinem a idade mínima e qual a idade do usuário e utilize estruturas condicionais (if, else) para determinar se o usuário pode realizar a compra.
+
+
+const idadeSufi = 18;
+
+let idade = 22;
+// Usando o operador ternario
+const podeComprar = idade >= idadeSufi ? `Pode comprar`: `Infelizmente não pode comprar`;
+console.log(podeComprar);
+// Usando o if e else
+
+if(idade >= idadeSufi){
+  console.log(`Pode comprar`);
+}else{
+  console.log(`Infelizmente não pode comprar`);
+}
