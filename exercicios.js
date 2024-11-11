@@ -195,3 +195,144 @@ if(idade >= idadeSufi){
 }else{
   console.log(`Infelizmente não pode comprar`);
 }
+
+//Programação é prática! Criamos mais uma lista de atividades (não obrigatórias) para você exercitar e reforçar ainda mais seu aprendizado. Bora praticar?
+
+//Crie uma função que receba o nome de uma pessoa como argumento e retorne uma saudação personalizada. Em seguida, chame a função e exiba a saudação no console.
+
+// Declaração de Função
+function recebeNome(nome){
+  return `Olá, querido ${nome}`
+}
+console.log(recebeNome(`Herique`));
+//Expressão de função
+const rebeceNome2 = function(nome2){
+  return `Olá, querido ${nome2}` 
+}
+console.log(rebeceNome2(`Herique2`));
+
+//Arrow Function
+
+const receberNome3 = (nome3) =>{
+  return `Olá, querido ${nome3}` 
+}
+
+console.log(receberNome3(`Herique3`));
+
+//Crie uma função que receba a idade de uma pessoa e retorne se ela é maior de idade (idade >= 18). Imprima o resultado no console.
+
+
+// Declaração de Função
+ function idadeMaior (idade){
+  if(idade >= 18){
+    return `Parabéns você tem ${idade} e é maior`
+  } else
+  return `Parado`;
+ }
+console.log(idadeMaior(15));
+
+//Expressão de função
+const idadeMaior2 = function (idade2){
+  if(idade2 >= 18){
+    return `Parabéns você tem ${idade2} e é maior`
+  } else
+  return `Parado`;
+}
+console.log(idadeMaior2(18));
+//Arrow Function só para Treinar
+
+const idadeMaior3 = (idade3) =>{
+  if(idade3 >= 18){
+    return `Parabéns você tem ${idade3} e é maior`
+  } else
+  return `Parado`;
+}
+console.log(idadeMaior3(17));
+
+
+//Crie uma função que receba uma string e verifique se é um palíndromo (uma palavra que é lida da mesma forma de trás para frente) utilizando o método de string reverse(). Retorne true se for um palíndromo e false caso contrário. Imprima o resultado no console.
+
+// Declaração de Função
+
+function palindromo(string){
+  const limpaString = string.replace(/\s+/g, '').toLowerCase();
+  return limpaString === limpaString.split("").reverse().join("");
+  
+}
+console.log(palindromo(`radarr`));
+
+//Expressão de função
+
+const palindromo2= function(string){
+  const limpaString2 = string.replace(/\s+/g,"").toLocaleLowerCase();
+  return limpaString2 === limpaString2.split("").reverse().join("");
+}
+console.log(palindromo(`radar`));
+//Arrow Function
+
+const palindromo3 = (string) =>{
+  limpaString3 = string.replace(/\s+/g+"").toLocaleLowerCase();
+ return limpaString3 === limpaString3.split("").reverse().join("");
+}
+console.log(palindromo3(`radar`));
+
+
+//Crie uma função que receba três números como parâmetros e determine qual é o maior entre eles. Utilize estruturas condicionais (if, else) para comparar os valores e determinar o maior. Imprima o maior valor no console.
+
+// Declaração de Função
+
+function recebeNumeros(number1,number2,number3){
+  if(number1 > number2 && number1 > number3){
+    return `O maior é o número ${number1}`
+  } else if(number2 > number1 && number2 > number3){
+    return `O maior é o número ${number2}`
+  } else if(number3> number1 && number3 > number2){
+    return `O maior é o número ${number3}`
+  }else{
+    return `São iguais`;
+  }
+}
+console.log(recebeNumeros(5,5,5));
+
+//Expressão de função
+const recebeNumeros2 = function(number1,number2,number3){
+  if(number1 > number2 && number1 > number3){
+    return `O maior é o número ${number1}`;
+  } else if(number2 > number1 && number2 > number3){
+    return `O maior é o número ${number2}`;
+  } else if(number3 > number2 && number3 > number1){
+    return `O maior é o número ${number3}`;
+  } else{
+    return `São todos iguais`
+  }
+}
+
+console.log(recebeNumeros2(10,5,20));
+
+
+//Arrow function
+
+const recebeNumeros3 = (number1, number2, number3)=>{
+  if(number1> number2 && number1 > number3){
+    return `O maior é o número ${number1}`;
+  } else if(number2 > number1 && number2 > number3){
+    return `O maior é o número ${number2}`;
+  } else if(number3 > number1 && number3 > number2){
+    return `O maior é o número ${number3}`;
+  } else{
+    return `São todos iguais`
+  }
+}
+
+console.log(recebeNumeros3(15,25,30))
+
+
+//Crie uma arrow function chamada calculaPotencia que receba dois parâmetros: a base e o expoente. A função deve calcular a potência da base elevada ao expoente e retornar o resultado.
+// o operador ** so é aceito nas versões mais novas
+
+const calculaPotencia = (base, expoente)=>{
+  const potencia = base ** expoente;
+  return `O resultado da potencia de ${base}, elevada a ${expoente} é igual a ${potencia}.`;
+}
+
+console.log(calculaPotencia(2,3));
