@@ -327,6 +327,7 @@ const recebeNumeros3 = (number1, number2, number3)=>{
 console.log(recebeNumeros3(15,25,30))
 
 
+
 //Crie uma arrow function chamada calculaPotencia que receba dois parâmetros: a base e o expoente. A função deve calcular a potência da base elevada ao expoente e retornar o resultado.
 // o operador ** so é aceito nas versões mais novas
 
@@ -336,3 +337,55 @@ const calculaPotencia = (base, expoente)=>{
 }
 
 console.log(calculaPotencia(2,3));
+
+
+//Arrays
+
+
+//Dominar o uso de arrays é fundamental em programação e uma base essencial na manipulação de dados. Praticar regularmente é a chave para se tornar mais confiante!
+//Para isso criamos uma lista de exercícios que não apenas ajudam a explorar os métodos de manipulação de arrays, mas também vão te preparar para lidar eficientemente com dados em aplicações reais.
+
+//Um array esparso é um tipo de array no qual a maioria dos elementos tem valores indefinidos. Crie um array esparso e atribua valores a alguns elementos do array (por exemplo, defina valores nos índices 1, 3 e 7). Imprima no console o array e também a informação de comprimento do array.
+
+const mininoEsparso = [,,,,,,,,];
+console.log(mininoEsparso);
+mininoEsparso[1] = 10;
+mininoEsparso[3] = 15;
+mininoEsparso[7] = 18;
+console.log(mininoEsparso.length);
+console.log(mininoEsparso);
+
+
+//Crie um programa em Node.js que inicie com um array cinco elementos e atribua um novo valor para a primeira posição (índice 0) desse array. Em seguida, exiba o array antes e depois da alteração.
+
+const iniciaElementos = [5, `linda`, true, 8, 9.5];
+console.log(iniciaElementos);
+iniciaElementos[0] = 98
+console.log(iniciaElementos);
+
+
+//Crie um array vazio chamado meuArray e adicione 3 números inteiros de sua escolha utilizando o método push(). Imprima no console os itens presentes no array para verificar se os números foram adicionados. Em seguida, substitua o primeiro elemento do array (índice 0) pelo dobro do seu valor atual. Imprima no console o array atualizado para verificar a mudança.
+ const meuArray = [];
+ meuArray.push(10,20,30);
+ console.log(meuArray);
+ meuArray[0] = 100;
+ console.log(meuArray);
+
+
+
+//Desenvolva um programa em Node.js que crie um array vazio e atribua valores a ele utilizando o método push(). Adicione três números inteiros ao array e, em seguida, exiba o array resultante.
+
+const vazioSim = [];
+vazioSim.push(55,56,57)
+console.log(vazioSim);
+
+
+//Desenvolva um programa em Node.js que simule uma clínica veterinária. Crie um array vazio chamado clinica que representará a fila de animais na clínica. Em um primeiro momento, simule a chegada de três animais diferentes e exiba a lista de animais no console. Após a exibição, remova os animais da lista um por vez e, por fim, exiba no console o estado final da lista.
+
+const clinica = [];
+clinica.push(`Dara`, `Zeus`, `Mel`);
+console.log(clinica);
+clinica.pop();
+clinica.pop();
+clinica.pop();
+console.log(clinica);
