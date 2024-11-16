@@ -389,3 +389,109 @@ clinica.pop();
 clinica.pop();
 clinica.pop();
 console.log(clinica);
+
+
+//Agora tente fazer um exercício:
+//Crie um array com os números [5, 10, 15, 20].
+
+//Use um for para mostrar os índices e os valores.
+//Use um for...of para mostrar apenas os valores.
+
+
+const numeros = [5, 10, 15, 20];
+
+// Usando o for tradicional
+for (let indice = 0; indice < numeros.length; indice++) {
+  console.log(`Índice ${indice}: ${numeros[indice]}`);
+}
+
+// Usando o for...of
+for (const numero of numeros) {
+  console.log(`Número: ${numero}`);
+}
+
+
+/*Desafio 1: Soma dos números
+Dado o array const numeros = [5, 10, 15, 20];
+some todos os valores do array usando um for e 
+depois usando um for...of.*/
+
+const numeros3 = [5,10,15,20];
+let soma = 0;
+for(let indice = 0; indice < numeros3.length; indice++){
+  soma += numeros3[indice];
+}
+console.log(soma);
+let soma2 =0;
+for (num of numeros3){
+soma2 += num;
+}
+console.log(soma2);
+
+
+
+//Dominar o uso de arrays é fundamental em programação e uma base essencial na manipulação de dados. Praticar regularmente é a chave para se tornar mais confiante!
+//Para isso criamos uma lista de exercícios que não apenas ajudam a explorar os métodos de manipulação de arrays, 
+//mas também vão te preparar para lidar eficientemente com dados 
+//em aplicações reais.
+
+// Escreva um código que utilize o loop for/of para iterar e 
+// imprimir cada elemento de um array.
+
+     const n1 = [10,55,56,80,33];
+     let number1 = 0;
+     for(i = 0;i < n1.length; i++){
+        console.log(n1[i]);   
+     }
+    
+     for (indice of n1){
+      console.log(indice);
+     }
+
+
+
+
+// Crie uma função que receba uma array e imprima no console o 
+// número do índice e o elemento.
+
+const funcionaArray = function(array69){
+  for (i=0; i < array69.length; i++){
+    console.log(`o indice equivale a ${i} e o numero ${array69[i]}`);}
+}
+
+const numeros69 = [99,88,77,66,55];
+funcionaArray(numeros69);
+
+
+//Crie uma função que receba uma array de números inteiros e retorne a soma dos elementos.
+
+let soma70 = 0;
+const funcionaArray2 = function (array70){
+  for (i=0; i < array70.length; i++)
+    soma70 += array70[i];
+  console.log(`A soma dos números é : ${soma70}`);
+}
+ const numeros70 = [3,6,1];
+ funcionaArray2(numeros70);
+
+//Crie uma função que receba uma array de números inteiros e retorne o menor valor e o maior valor da array, 
+//no seguinte formato: 'o menor número é X e o maior número é Y'.
+
+const funcionaArray3 = function(array71){
+  const menor = Math.min(...array71);
+  const maior = Math.max(...array71);
+  return {menor, maior};
+}
+
+const numeros71 = [10, 5, 20, 8, 15];
+const resultado = funcionaArray3(numeros71);
+return console.log(`O menor valor é: ${resultado.menor} e o maior valor é: ${resultado.maior}`);
+
+//Crie um programa que utilize um laço for para percorrer uma array const numeros = [3, 8, 12, 5, 6, 10, 7, 2, 9, 14] e exibir no console apenas os números pares contidos nesse array.
+
+
+
+
+
+
+//Crie um programa que calcule a média dos números presentes em um array utilizando um loop for.
