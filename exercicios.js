@@ -391,6 +391,7 @@ clinica.pop();
 console.log(clinica);
 
 
+<<<<<<< HEAD
 //Dominar o uso de arrays é fundamental em programação e uma base essencial na manipulação de dados. Praticar regularmente é a chave para se tornar mais confiante!
 
 //Para isso criamos uma lista de exercícios que não apenas ajudam a explorar os métodos de manipulação de arrays, mas também vão te preparar para lidar eficientemente com dados em aplicações reais.
@@ -464,3 +465,129 @@ console.log(listaDimensionalVazia[1][2]);
 
 listaDimensionalVazia[2][1] = 15;
 console.log('Matriz após adição de elemento:', listaDimensionalVazia);
+=======
+//Agora tente fazer um exercício:
+//Crie um array com os números [5, 10, 15, 20].
+
+//Use um for para mostrar os índices e os valores.
+//Use um for...of para mostrar apenas os valores.
+
+
+const numeros = [5, 10, 15, 20];
+
+// Usando o for tradicional
+for (let indice = 0; indice < numeros.length; indice++) {
+  console.log(`Índice ${indice}: ${numeros[indice]}`);
+}
+
+// Usando o for...of
+for (const numero of numeros) {
+  console.log(`Número: ${numero}`);
+}
+
+
+/*Desafio 1: Soma dos números
+Dado o array const numeros = [5, 10, 15, 20];
+some todos os valores do array usando um for e 
+depois usando um for...of.*/
+
+const numeros3 = [5,10,15,20];
+let soma = 0;
+for(let indice = 0; indice < numeros3.length; indice++){
+  soma += numeros3[indice];
+}
+console.log(soma);
+let soma2 =0;
+for (num of numeros3){
+soma2 += num;
+}
+console.log(soma2);
+
+
+
+//Dominar o uso de arrays é fundamental em programação e uma base essencial na manipulação de dados. Praticar regularmente é a chave para se tornar mais confiante!
+
+//Para isso criamos uma lista de exercícios que não apenas ajudam a explorar os métodos de manipulação de arrays, mas também vão te preparar para lidar eficientemente com dados em aplicações reais.
+
+//Escreva um código que utilize o loop for/of para iterar e imprimir cada elemento de um array.
+
+const codigoLoop = [1,2,3];
+for(let numeros of codigoLoop){
+  console.log(numeros);
+}
+
+const codigoLoopFor = [3,2,1];
+for(let indice = 0; indice < codigoLoopFor.length; indice++){
+  console.log(codigoLoopFor[indice]);
+}
+
+
+
+//Crie uma função que receba uma array e imprima no console o número do índice e o elemento.
+
+const arrayNumeros = function(arrayNumerosParam){
+  for([indice, elemento] of arrayNumerosParam.entries()){
+    console.log (`O indice é ${indice} e o elemento é ${elemento}`);
+  }
+}
+
+const arrayNumerosExec = [4,5,6];
+(arrayNumeros(arrayNumerosExec));
+
+
+//Crie uma função que receba uma array de números inteiros e retorne a soma dos elementos.
+
+const arrayNumerosInteiros = function(arrayNumerosParamSoma){
+  let soma =0;
+  for( const [indice, elementos] of arrayNumerosParamSoma.entries()){
+   soma += elementos;
+   console.log(`O indice é ${indice}, e os elementos somados são: ${elementos}`)
+  }
+  return `O resultado da soma é: ${soma}`;
+}
+const arrayNumerosExecSoma = [50,50,50];
+console.log(arrayNumerosInteiros(arrayNumerosExecSoma));
+
+
+
+//Crie uma função que receba uma array de números inteiros e retorne o menor valor e o maior valor da array, no seguinte formato: 'o menor número é X e o maior número é Y'.
+
+const arrayNumerosInt = function (arrayInteiros){
+  const maior = Math.max(...arrayInteiros)
+  const menor = Math.min(...arrayInteiros)
+  return `O maior é ${maior} e o menor é ${menor}`
+}
+
+const arrayNumerosIntExec = [55,99,101,2000];
+console.log(arrayNumerosInt(arrayNumerosIntExec));
+
+
+
+
+//Crie um programa que utilize um laço for para percorrer uma array const numeros = [3, 8, 12, 5, 6, 10, 7, 2, 9, 14] e exibir no console apenas os números pares contidos nesse array.
+
+const numeros = [3, 8, 12, 5, 6, 10, 7, 2, 9, 14];
+const numerosPares = []
+for(let indice of numeros){
+  if(indice % 2===0){
+    numerosPares.push(indice);
+    numerosPares.sort((a, b) => a - b);            
+  }
+}
+console.log(`Estes são os pares ${numerosPares}`)
+
+
+
+
+
+//Crie um programa que calcule a média dos números presentes em um array utilizando um loop for.
+
+const calculaMediaNumeros = function (arrayNumbers){
+  let soma = 0;
+  for( const numeros of arrayNumbers){
+    soma += numeros;
+  }
+  return `A média entre os números é ${soma / arrayNumbers.length}`;
+}
+const numerosExec = [3, 8, 12, 5, 6, 10, 7, 2, 9, 14];
+console.log(calculaMediaNumeros(numerosExec));
