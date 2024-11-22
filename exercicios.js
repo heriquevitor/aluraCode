@@ -391,7 +391,7 @@ clinica.pop();
 console.log(clinica);
 
 
-<<<<<<< HEAD
+
 //Dominar o uso de arrays é fundamental em programação e uma base essencial na manipulação de dados. Praticar regularmente é a chave para se tornar mais confiante!
 
 //Para isso criamos uma lista de exercícios que não apenas ajudam a explorar os métodos de manipulação de arrays, mas também vão te preparar para lidar eficientemente com dados em aplicações reais.
@@ -465,26 +465,6 @@ console.log(listaDimensionalVazia[1][2]);
 
 listaDimensionalVazia[2][1] = 15;
 console.log('Matriz após adição de elemento:', listaDimensionalVazia);
-=======
-//Agora tente fazer um exercício:
-//Crie um array com os números [5, 10, 15, 20].
-
-//Use um for para mostrar os índices e os valores.
-//Use um for...of para mostrar apenas os valores.
-
-
-const numeros = [5, 10, 15, 20];
-
-// Usando o for tradicional
-for (let indice = 0; indice < numeros.length; indice++) {
-  console.log(`Índice ${indice}: ${numeros[indice]}`);
-}
-
-// Usando o for...of
-for (const numero of numeros) {
-  console.log(`Número: ${numero}`);
-}
-
 
 /*Desafio 1: Soma dos números
 Dado o array const numeros = [5, 10, 15, 20];
@@ -591,3 +571,117 @@ const calculaMediaNumeros = function (arrayNumbers){
 }
 const numerosExec = [3, 8, 12, 5, 6, 10, 7, 2, 9, 14];
 console.log(calculaMediaNumeros(numerosExec));
+
+
+// Calcular a média usando forEach
+
+const arrayMedias = [10,6.5,8,7.5];
+
+let somar = 0;
+arrayMedias.forEach(function(notas){
+  somar += notas;
+})
+
+const media = somar / arrayMedias.length;
+
+console.log(`A média das notas ${arrayMedias} é ${media}`);
+
+
+
+//Para isso criamos uma lista de exercícios que não apenas ajudam a explorar os métodos de manipulação de arrays, mas também vão te preparar para lidar eficientemente com dados em aplicações reais.
+
+//1 - Utilize o método forEach para imprimir cada elemento de um array juntamente com seu índice.
+
+const arrayIndice = [10,20,30,40,50,55];
+
+//o number devolve o elemento e o index devolve indice
+
+arrayIndice.forEach((number, index)=>{
+  return console.log(`O elemento ${number} tem como seu indice ${index}`)
+});
+
+
+//2 - Crie uma função chamada executaOperacaoEmArray que recebe dois parâmetros: um array e uma função de callback que executa alguma operação matemática. Essa função deve iterar por cada elemento do array e aplicar a função de callback em cada um dos elementos, imprimindo o resultado da operação no console.
+
+const operaArray = function executaOperacaoEmArray(arr, callback){
+  arr.forEach((numeros)=>{
+    const resultado = callback(numeros)
+    console.log(resultado)
+  })
+};
+
+const meuArray2 = [10,20,30];
+
+function somaMeunumero (num){
+  return num+num
+}
+operaArray(meuArray2, somaMeunumero);
+
+
+
+
+//3 - Você recebeu um array numeros contendo valores numéricos. 
+//Crie um programa que verifique se um número específico está presente nesse array. 
+//Se estiver, o programa deve retornar a posição (índice) desse número. 
+//Caso contrário, se o número não estiver presente, o programa deve retornar "-1".
+
+const encontrarIndice = function encontrarN(arrayZim, numeroQuero){
+  const indice = arrayZim.indexOf(numeroQuero);
+  return indice !== -1 ? indice : -1;
+}
+
+const arrayZim = [40,50,60,70,80,90];
+const numeroQuero = 90;
+
+const resultado = encontrarIndice(arrayZim, numeroQuero);
+console.log(resultado);
+
+
+
+
+
+
+//4 - Você recebeu dois arrays de nomes contendo os alunos da Turma A e da Turma B.
+//Utilize o método concat() para unir os arrays das turmas A e B em um único array chamado todasAsTurmas.
+// Depois, utilize o método find() para buscar um aluno específico pelo nome no array todosAlunos. 
+//Exiba no console uma mensagem informando o nome do aluno procurado; caso não exista na lista, retorne uma mensagem de aviso, por exemplo Aluno não encontrado.
+
+
+const nomesTurmaA = [
+  'João Silva',
+  'Maria Santos',
+  'Pedro Almeida'
+];
+
+const nomesTurmaB = [
+  'Carlos Oliveira',
+  'Ana Souza',
+  'Lucas Fernandes'
+];
+
+ const todasAsTurmas = nomesTurmaA.concat(nomesTurmaB);
+
+ const encontrarAluno = function(array, nomeEncontrado){
+  const resultado = array.find((nome)=> nome === nomeEncontrado)
+  return resultado || `Não encontrado`;
+ }
+
+ const todosAlunos = todasAsTurmas;
+ const nomeAluno = 'Carlos';
+ console.log(encontrarAluno(todosAlunos, nomeAluno));
+ 
+
+
+
+
+
+//5 - Considere um array de números inteiros.
+//Utilize o método forEach() para multiplicar cada elemento do array por 3 e exibir no console o resultado de cada multiplicação. Depois, utilize o método findIndex() para encontrar o índice do número 18 no array original.
+
+const numerosCall = [6, 9, 12, 15, 18, 21];
+
+numerosCall.forEach((number)=> console.log(number * 3));
+
+const indiceElemento = (elemento) => elemento === 18;
+
+console.log(numerosCall.findIndex(indiceElemento));
