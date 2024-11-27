@@ -685,3 +685,16 @@ numerosCall.forEach((number)=> console.log(number * 3));
 const indiceElemento = (elemento) => elemento === 18;
 
 console.log(numerosCall.findIndex(indiceElemento));
+
+
+// Método filter()
+
+//Filtrar números pares
+//Você tem um array de números e precisa criar um novo array contendo apenas os números pares. Para isso, use o método .filter.
+//Use o método .filter para filtrar os números pares.
+
+const numerosPaares = [3, 8, 5, 12, 7, 10, 15, 6];
+
+const numeroDivisel = numerosPaares.filter((numeroPaar)=> numeroPaar % 2 === 0);
+console.log(numeroDivisel);
+
