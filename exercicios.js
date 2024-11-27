@@ -698,3 +698,96 @@ const numerosPaares = [3, 8, 5, 12, 7, 10, 15, 6];
 const numeroDivisel = numerosPaares.filter((numeroPaar)=> numeroPaar % 2 === 0);
 console.log(numeroDivisel);
 
+// Dominar o uso de arrays é fundamental em programação e uma base essencial na manipulação de dados. Praticar regularmente é a chave para se tornar mais confiante!
+
+// Para isso criamos uma lista de exercícios que não apenas ajudam a explorar os métodos de manipulação de arrays, mas também vão te preparar para lidar eficientemente com dados em aplicações reais.
+
+// 1 - Faça uma função que aceite vários arrays como argumentos e retorne um único array contendo todos os elementos dos arrays fornecidos, utilizando Spread Operator.
+
+const aceitoVarios = function(x,y,z){
+  const combined = [...x,...y,...z]
+  return combined;
+}
+const arrayTeste = [1,2,3,4,5]
+const arrayTesteDois = [6,7,8,9,10]
+const arrayTesteTres = [11,12,13,14,15]
+console.log(aceitoVarios(arrayTeste,arrayTesteDois,arrayTesteTres));
+
+
+
+// Dica: é possível usar o spread operator diretamente em um parâmetro de função para "espalhar" seu conteúdo, por exemplo function funcaoExemplo(...params).
+
+// 2 - Crie um array de números chamado valores. Depois,escreva um programa que some todos os elementos deste array utilizando o método reduce.
+
+
+const numerosArray = [16,17,18,19,20];
+
+const somarTudo = function(arrayElementos){
+  const soma = arrayElementos.reduce((acumular, elementos)=> acumular + elementos + 0)
+  return soma
+};
+
+console.log(somarTudo(numerosArray));
+
+
+
+
+
+// 3 - Considere duas listas de cores:
+// Crie um programa que una essas duas listas, removendo cores duplicadas e exiba a lista final.
+
+//const listaNomesAtualizados = [...new Set(nomes)];
+//console.log(listaNomesAtualizados);
+
+const coresLista1 = ['Vermelho', 'Verde', 'Azul', 'Amarelo', 'Vermelho']
+
+const coresLista2 = ['Laranja', 'Verde', 'Roxo', 'Azul']
+
+const juntarTudo = function(arrayUM,arrayDois){
+  const juntarArray = [...arrayUM, ...arrayDois]
+  return juntarArray
+}
+
+const juntandoTudo = juntarTudo(coresLista1,coresLista2);
+const listasAtualizadas = [...new Set(juntandoTudo)];
+console.log(listasAtualizadas);
+
+
+
+
+
+// 4 - Escreva uma função que receba um array de números e retorne um array contendo apenas os números pares.
+
+const arrayNumeral = function (numerosSo){
+  const pegaPar = numerosSo.filter((elemento)=>elemento % 2 ===0)
+  return pegaPar
+ }
+const arrayDePega = [2,4,5,7,8,10,12,24,555,57];
+console.log(arrayNumeral(arrayDePega));
+
+
+
+// 5 - Crie uma função que filtre os números de um array que são múltiplos de 3 e maiores que 5.
+
+const arrayMultiplo = [3,10,15,27,9,36,33,47,49,55,56,53,93,90];
+
+const filtroTres = function (arrayMultiplo){
+  const pegaMultiplo = arrayMultiplo.filter((elemento)=>
+    elemento % 3 === 0 && elemento > 5)
+    return pegaMultiplo
+  }
+
+
+console.log(filtroTres(arrayMultiplo));
+
+
+
+// 6 - Crie uma função que receba um array de números e retorne a soma de todos os elementos.
+
+const vouSomar = function (arrayPraSomar){
+  const somando = arrayPraSomar.reduce((acumulador, numero)=> acumulador + numero, 0);
+  return somando
+}
+
+const numerosPrasomar= [2,4,6,8,9,10];
+console.log(vouSomar(numerosPrasomar));

@@ -4,6 +4,7 @@ const salaPython = [7,3.5,8,9.5];
 
 
 function calculaMedia(listaDeNotas){
+  // SERVE PARA REduzir todos os elementos em um único
   //laço reduce, primeiro parametro é acumulador, elementoqestasendoiterado
   // pós função, devemos passar a outra iteração
   const somaDasNotas = listaDeNotas.reduce((acumulador, nota)=>acumulador + nota, 0);
@@ -15,3 +16,4 @@ function calculaMedia(listaDeNotas){
 console.log(calculaMedia(salaJs));
 console.log(calculaMedia(salaJava));
 console.log(calculaMedia(salaPython));
+//https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce

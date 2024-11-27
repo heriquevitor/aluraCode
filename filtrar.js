@@ -18,3 +18,5 @@ const reprovados = alunos.filter((_, indice)=>{
 })
 
 console.log(reprovados);
+
+//https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
