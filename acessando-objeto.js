@@ -14,9 +14,15 @@ const exibeInfoEstudante = function (objEstudante, infoEstudante){
 }
 // usando []
 
+//se passar sem as '' ele vai achar que é parametro ou variavel ai da erro
+
 console.log(estudante['nome']);
 console.log(estudante['cpf']);
 
 //usando  ()
 console.log(exibeInfoEstudante(estudante, 'nome'));
 console.log(exibeInfoEstudante(estudante, 'cpf'))
+
+
+// se acessar uma propriedade que não existe, o javasript
+// nao da erro, ele passa undefined

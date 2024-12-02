@@ -25,3 +25,5 @@ delete estudante.turma;
 delete estudante['cpf']
 
 console.log(estudante);
+
+
