@@ -940,49 +940,136 @@ console.log(livro204);
 
 
    // 1 - Crie um arquivo chamado infoPessoa.js. Nesse arquivo, crie um objeto chamado pessoa que represente informações sobre uma pessoa. 
-   //Este objeto deve ter as seguintes propriedades:
-
-/*nome (string): Nome da pessoa.
-idade (number): Idade da pessoa.
-solteiro (boolean): Indicador de estado civil (true se solteiro, false se casado).
-hobbies (array): Lista de hobbies da pessoa.
-Adicione valores a cada propriedade do objeto pessoa. Use valores fictícios para simular uma pessoa específica.*/
-
-//Crie uma função chamada mostrarInfoPessoa que aceite o objeto pessoa como parâmetro e imprima todas as informações da pessoa no console, 
+   //Este objeto deve ter as seguintes propriedades, nome, idade, solteiro, hobbies,
+   //Adicione valores a cada propriedade do objeto pessoa. Use valores fictícios para simular uma pessoa específica.
+   //Crie uma função chamada mostrarInfoPessoa que aceite o objeto pessoa como parâmetro e imprima todas as informações da pessoa no console, 
 //incluindo o tipo de dado de cada propriedade.
 //No final do arquivo infoPessoa.js, chame a função mostrarInfoPessoa passando o objeto pessoa como argumento.
+
+const pessoa2 = {
+nome: 'Herique',
+idade: 34,
+solteiro: true, //Indicador de estado civil (true se solteiro, false se casado).
+hobbies: ['sexo', 'programar','jogar pc']
+}
+
+const mostrarInfoPessoa = function (objeto, indent = 0) {
+  const indentSpace = '  '.repeat(indent); // Adiciona indentação para clareza visual.
+  for (const key in objeto) {
+    if (objeto.hasOwnProperty(key)) {
+      if (typeof objeto[key] === 'object' && !Array.isArray(objeto[key])) {
+        console.log(`${indentSpace}Propriedade: ${key} (objeto):`);
+        mostrarInfoPessoa(objeto[key], indent + 1); // Chamada recursiva para subpropriedades.
+      } else {
+        console.log(
+          `${indentSpace}Propriedade: ${key}, Valor: ${objeto[key]}, Tipo de dado: ${typeof objeto[key]}`
+        );
+      }
+    }
+  }
+};
+
+
+
 
 
 
 //2 - Adicione ao objeto pessoa uma nova propriedade chamada endereco. Esta propriedade deve ser um objeto representando o endereço da pessoa, 
-//com as seguintes subpropriedades:
+//com as seguintes subpropriedades:/*rua (string): nome da rua.
+//cidade (string): nome da cidade.
+//estado (string): nome do estado.
+//Preencha as subpropriedades do objeto endereco com valores fictícios.
+//Modifique a função mostrarInfoPessoa para incluir as informações do endereço da pessoa ao ser chamada.
+//No final do arquivo infoPessoa.js, chame a função mostrarInfoPessoa para verificar se as informações atualizadas, incluindo o endereço, 
+//são exibidas corretamente no console.
 
-/*rua (string): nome da rua.
-cidade (string): nome da cidade.
-estado (string): nome do estado.
-Preencha as subpropriedades do objeto endereco com valores fictícios.
+pessoa2.endereco = {
+  rua: 'Perto de Algum lugar',
+  cidade: 'Parada de Minas',
+  estado: 'Minas Gerais',
+}
 
-Modifique a função mostrarInfoPessoa para incluir as informações do endereço da pessoa ao ser chamada.
+function mostrarInfoPessoaSimples(pessoa) {
+  console.log("Informações da Pessoa:");
+  console.log(`Nome: ${pessoa2.nome} (Tipo: ${typeof pessoa2.nome})`);
+  console.log(`Idade: ${pessoa2.idade} anos (Tipo: ${typeof pessoa2.idade})`);
+  console.log(`Solteiro: ${pessoa2.solteiro} (Tipo: ${typeof pessoa2.solteiro})`);
+  console.log(`Hobbies: ${pessoa2.hobbies.join(", ")} (Tipo: ${typeof pessoa2.hobbies})`);
+  console.log("Endereço:");
+  console.log(`Rua: ${pessoa2.endereco.rua}`);
+  console.log(`Cidade: ${pessoa2.endereco.cidade}`);
+  console.log(`Estado: ${pessoa2.endereco.estado}`);
+}
 
-No final do arquivo infoPessoa.js, chame a função mostrarInfoPessoa para verificar se as informações atualizadas, incluindo o endereço, 
-são exibidas corretamente no console.*/
+mostrarInfoPessoaSimples(pessoa2)
+
+
+
+
+
 
 //3 - Crie uma lista de pessoas chamada pessoas que será um array contendo objetos. Cada objeto deve representar uma pessoa e conter as seguintes propriedades:
-
 /*nome (string): nome da pessoa.
 idade (number): idade da pessoa.
 cidade (string): cidade de residência da pessoa.
 Adicione pelo menos três objetos à lista pessoas com informações fictícias de diferentes pessoas.*/
 
+const Herique = {
+  nome: 'Herique',
+  idade: 34,
+  cidade: 'paradaDeMinas',
+};
+const Dayane = {
+  nome: 'Dayane',
+  idade: 20,
+  cidade: 'terraDaGostosa',
+};
+const Dara = {
+  nome: 'Dara',
+  idade: 4,
+  cidade: 'terraDoCobertor',
+};
+const listaPessoas = [Herique, Dayane, Dara];
+
+
+//console.log(listaPessoas);
+
+
+
+
 //a) Crie uma função chamada mostrarListaPessoas que aceita a lista pessoas como parâmetro e imprima no console as informações de cada pessoa na lista.
 
+const mostrarListaPessoas = function (listPerson) {
+  listPerson.forEach((pessoa) => console.log(pessoa));
+};
+
+// Teste
+mostrarListaPessoas(listaPessoas);
+
 //b) Adicione uma nova pessoa à lista pessoas utilizando o método push. Certifique-se de que a nova pessoa tenha informações distintas das pessoas já existentes na lista.
+const PapaiNoel = {
+  nome: 'PapaiNoel',
+  idade: 400,
+  Cidade: 'terraDoGelo',
+}
+listaPessoas.push(PapaiNoel)
 
 //c) Chame a função mostrarListaPessoas para verificar se as informações, incluindo a nova pessoa, são exibidas corretamente no console.
 
+mostrarListaPessoas(listaPessoas);
+
 //d) Crie uma função chamada filtrarPorCidade que aceita a lista pessoas e uma string cidade como parâmetros. 
 // A função deve retornar uma nova lista contendo apenas as pessoas que residem na cidade fornecida.
+
+const filtrarPorCidade = function(listaPeople, cidade){
+  const vouEncontrar = listaPeople.filter((listaPeople)=> cidade === listaPeople.Cidade);
+  return console.log(vouEncontrar);
+}
+
+filtrarPorCidade(listaPessoas, 'terraDoGelo');
+
 //Chame a função filtrarPorCidade passando a lista pessoas e uma cidade fictícia como argumentos e imprima no console o resultado obtido.
+
 
 /*4 - Crie um objeto chamado calculadora que terá os seguintes métodos:
 
@@ -992,11 +1079,64 @@ multiplicacao: uma função que aceita dois parâmetros e retorna o resultado da
 divisao: uma função que aceita dois parâmetros e retorna o resultado da divisão do primeiro pelo segundo. 
 Certifique-se de tratar a divisão por zero, retornando uma mensagem apropriada nesse caso.*/
 
+const somarObj = function (a, b){
+  return a + b;
+}
+const subtrairObj = function (a, b){
+  return a - b;
+}
+const multiplicaObj = function (a, b){
+  return a * b;
+}
+const dividirObj = function (a, b){
+  if(b ===0 ){
+    return ('Não é permitida divisão por 0')
+  } else{
+    return a / b;
+  }
+};
+
+const calculaDora = {
+  somar: somarObj,
+  subtrair: subtrairObj,
+  multiplicar: multiplicaObj,
+  dividir: dividirObj,
+};
+
+
 //a) Chame cada função dentro do objeto calculadora passando valores como argumentos e imprima no console os resultados obtidos.
 
-//b) Adicione um novo método chamado calcularMedia ao objeto calculadora. Esta função deve aceitar um array de números como parâmetro e retornar a média aritmética dos valores.
+console.log(calculaDora.somar(10,10));
+console.log(calculaDora.subtrair(12,10));
+console.log(calculaDora.multiplicar(5,10));
+console.log(calculaDora.dividir(100,50));
 
+
+//b) Adicione um novo método chamado calcularMedia ao objeto calculadora. Esta função deve aceitar um array de números como parâmetro e retornar a média aritmética dos valores.
 //c) Chame a função calcularMedia passando um array de números e imprima no console o resultado obtido.
+
+calculaDora.calcularMedia = function (mediaArray){
+  let somaN = 0;
+  for(const elemento of mediaArray){
+    somaN += elemento;
+  }
+  return console.log(somaN / mediaArray.length);
+}
+const testeArray = [10,55,66,77,88,99,100,101]
+calculaDora.calcularMedia(testeArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*5 - Crie um objeto chamado contaBancaria com as seguintes propriedades:
 
