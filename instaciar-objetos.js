@@ -8,7 +8,7 @@ const objPersonagem = {
 
 
 // instanciar preciamos usar o método object.create()
-// aqui usamos como molde o personagem1
+//o personagem 2 é uma instancia do 1
 const objPersonagem2 = Object.create(objPersonagem);
 objPersonagem2.nome = 'Saruman'
 
