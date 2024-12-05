@@ -1106,10 +1106,10 @@ const calculaDora = {
 
 //a) Chame cada função dentro do objeto calculadora passando valores como argumentos e imprima no console os resultados obtidos.
 
-console.log(calculaDora.somar(10,10));
-console.log(calculaDora.subtrair(12,10));
-console.log(calculaDora.multiplicar(5,10));
-console.log(calculaDora.dividir(100,50));
+//console.log(calculaDora.somar(10,10));
+//console.log(calculaDora.subtrair(12,10));
+//console.log(calculaDora.multiplicar(5,10));
+//console.log(calculaDora.dividir(100,50));
 
 
 //b) Adicione um novo método chamado calcularMedia ao objeto calculadora. Esta função deve aceitar um array de números como parâmetro e retornar a média aritmética dos valores.
@@ -1123,32 +1123,50 @@ calculaDora.calcularMedia = function (mediaArray){
   return console.log(somaN / mediaArray.length);
 }
 const testeArray = [10,55,66,77,88,99,100,101]
-calculaDora.calcularMedia(testeArray);
+//calculaDora.calcularMedia(testeArray);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*5 - Crie um objeto chamado contaBancaria com as seguintes propriedades:
-
-titular: uma string representando o titular da conta.
-saldo: um número representando o saldo da conta.
-depositar: uma função que aceita um valor como parâmetro e adiciona esse valor ao saldo da conta. 
-Utilize this para acessar a propriedade saldo.
-sacar: uma função que aceita um valor como parâmetro e subtrai esse valor do saldo da conta. 
-Utilize this para acessar a propriedade saldo. Certifique-se de verificar se há saldo suficiente antes de efetuar o saque.*/
-
-//Crie um objeto chamado cliente que representa um cliente com uma conta bancária. O objeto deve ter as seguintes propriedades:
-//conta: uma referência à conta bancária associada a esse cliente (objeto criado anteriormente).
-//Crie uma função chamada mostrarSaldo que aceita o objeto cliente como parâmetro e imprime no console o nome do cliente e o saldo da sua conta utilizando this para acessar as propriedades do objeto.
-//Realize operações de depósito e saque na conta bancária do cliente usando as funções do objeto contaBancaria e, em seguida, chame a função para exibir as informações atualizadas no console.
+//5 - Crie um objeto chamado contaBancaria com as seguintes propriedades:
+//Utilize this para acessar a propriedade saldo.
+//sacar: uma função que aceita um valor como parâmetro e subtrai esse valor do saldo da conta. 
+//Utilize this para acessar a propriedade saldo. Certifique-se de verificar se há saldo suficiente antes de efetuar o saque.
+//Realize operações de depósito e saque na conta bancária do cliente usando as funções do objeto contaBancaria e, 
+//em seguida, chame a função para exibir as informações atualizadas no console.
+//Crie um objeto chamado cliente que representa um cliente com uma conta bancária. 
+//O objeto deve ter as seguintes propriedades:
 //nome: uma string representando o nome do cliente.
+//conta: uma referência à conta bancária associada a esse cliente objeto criado anteriormente).
+//Crie uma função chamada mostrarSaldo que aceita o objeto cliente como parâmetro e imprime no console o nome do cliente e o saldo da sua conta utilizando this para acessar as propriedades do objeto.
+
+
+const contaBancaria = {
+  titular: 'Herique',
+  saldo: 10000,
+  depositar(valorDepositado) {
+    this.saldo += valorDepositado;
+    return this.saldo;
+  },
+  sacar(valorSacado) {
+    if (this.saldo < valorSacado) {
+      console.log('Saldo insuficiente');
+      return this.saldo;
+    } else {
+      this.saldo -= valorSacado;
+      return this.saldo;
+    }
+  },
+};
+
+const clienteEspecial = {
+  nome: 'Herique',
+  conta: contaBancaria,
+  mostrarSaldo() {
+    console.log(`${this.nome}, este é o seu saldo: ${this.conta.saldo}`);
+  },
+};
+
+console.log(clienteEspecial.conta.sacar(5000)); // Reduz saldo para 5000
+console.log(clienteEspecial.conta.depositar(1000)); // Aumenta saldo para 6000
+clienteEspecial.mostrarSaldo(); // Exibe o saldo atualizado
